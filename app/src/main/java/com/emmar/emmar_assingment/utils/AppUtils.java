@@ -4,8 +4,6 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import com.emmar.emmar_assingment.databinding.ActivityMainBindingImpl;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;

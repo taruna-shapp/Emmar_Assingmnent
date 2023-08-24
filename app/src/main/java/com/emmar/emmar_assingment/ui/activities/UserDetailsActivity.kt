@@ -10,14 +10,18 @@ import com.emmar.emmar_assingment.databinding.ActivityUserDetailsBinding
 import com.emmar.emmar_assingment.utils.AppConstants
 import com.google.gson.Gson
 
-class UserDetailsActivity : AppCompatActivity() {
+class UserDetailsActivity : BaseActivity() {
 
     private lateinit var binding: ActivityUserDetailsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_user_details)
         binding.user = getBundleData()
+    }
+
+    override fun initDataBinding() {
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_user_details)
+
     }
 
     private fun getBundleData(): User {

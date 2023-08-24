@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,7 +36,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         initView();
         hitApt();
-        getAllUsers();
+        Observers();
     }
 
     private void initView() {
@@ -86,8 +85,10 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-
-    private void getAllUsers() {
+    /**
+     * Observer to fetch api response and display data
+     **/
+    private void Observers() {
         mainViewModel.getGetAllUsers().observe(this, users -> {
             hideProgressDialog();
             activityMainBinding.idPBLoading.setVisibility(View.GONE);
