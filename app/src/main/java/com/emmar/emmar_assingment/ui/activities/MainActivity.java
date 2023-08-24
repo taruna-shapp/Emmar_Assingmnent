@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.emmar.emmar_assingment.R;
 import com.emmar.emmar_assingment.database.entity.User;
 import com.emmar.emmar_assingment.databinding.ActivityMainBinding;
-import com.emmar.emmar_assingment.ui.adapter.UserListViewAdapter;
+import com.emmar.emmar_assingment.adapter.UserListViewAdapter;
 import com.emmar.emmar_assingment.utils.AppConstants;
 import com.emmar.emmar_assingment.utils.AppUtils;
 import com.emmar.emmar_assingment.utils.PaginationListener;
