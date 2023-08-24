@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.emmar.emmar_assingment.database.entity.User" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvUserTitle"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_50dp"
+            android:background="@color/light_grey"
+            android:gravity="center"
+            android:text="@{user.name}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Gina" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5dp"
+            android:onClick="onBackBtn"
+            android:padding="@dimen/_10dp"
+            android:src="@drawable/ic_back_btn"
+            app:layout_constraintBottom_toBottomOf="@id/tvUserTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvUserTitle" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_30dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_30dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivUserImage"
+            android:layout_width="@dimen/_200dp"
+            android:layout_height="@dimen/_200dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:layout_marginStart="@dimen/_10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/tvUserTitle"
+            bind:avatar="@{user.image}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="@dimen/_60dp"
+            android:layout_height="@dimen/_60dp"
+            android:background="@drawable/ic_rh_shape"
+            android:gravity="center"
+            android:text="@{user.age}"
+            android:textSize="12sp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginBottom="@dimen/_20dp"
+            app:layout_constraintEnd_toEndOf="@id/ivUserImage"
+            app:layout_constraintStart_toEndOf="@id/ivUserImage"
+            app:layout_constraintBottom_toTopOf="@id/topLine"
+            tools:text="28" />
+
+        <View
+            android:id="@+id/topLine"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_2dp"
+            android:layout_marginTop="@dimen/_40dp"
+            android:layout_marginStart="@dimen/_15dp"
+            android:layout_marginEnd="@dimen/_15dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/ivUserImage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEmail"
+            android:layout_marginStart="@dimen/_15dp"
+            android:layout_marginEnd="@dimen/_15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:text="@{user.getDetailEmail}"
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/topLine"
+            tools:text="Email: gino@@yopmail.com" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvdate"
+            android:layout_marginStart="@dimen/_15dp"
+            android:layout_marginEnd="@dimen/_15dp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2dp"
+            android:text="@{user.dateJoined()}"
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmail"
+            tools:text="Date Joined: 2 days ago" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDOB"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2dp"
+            android:includeFontPadding="false"
+            android:text="@{user.dobDate}"
+            android:layout_marginStart="@dimen/_15dp"
+            android:layout_marginEnd="@dimen/_15dp"
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/tvdate"
+            tools:text="DOB: 212 Dec 1981" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLocation"
+            android:layout_marginStart="@dimen/_15dp"
+            android:layout_marginEnd="@dimen/_15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20dp"
+            android:includeFontPadding="false"
+            android:text="LOCATION"
+            android:textSize="@dimen/_16sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/tvDOB" />
+
+        <View
+            android:id="@+id/midLine"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_2dp"
+            android:layout_marginTop="@dimen/_5dp"
+            android:background="@color/black"
+            android:layout_marginStart="@dimen/_15dp"
+            android:layout_marginEnd="@dimen/_15dp"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/tvLocation" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCity"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:includeFontPadding="false"
+            android:text="@{user.city}"
+            android:layout_marginStart="@dimen/_15dp"
+            android:layout_marginEnd="@dimen/_15dp"
+            android:textSize="@dimen/_13sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/midLine"
+            tools:text="city: Salford" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/black"
+            android:text="@{user.state}"
+            android:textSize="@dimen/_13sp"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/_15dp"
+            android:layout_marginEnd="@dimen/_15dp"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/tvCity"
+            tools:text="state: File" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_15dp"
+            android:layout_marginEnd="@dimen/_15dp"
+            android:includeFontPadding="false"
+            android:text="@{user.getDetailCountry}"
+            android:textSize="@dimen/_13sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/tvState"
+            tools:text="country: United" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPostCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_15dp"
+            android:layout_marginEnd="@dimen/_15dp"
+            android:text="@{user.postCode}"
+            android:textSize="@dimen/_13sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/tvCountry"
+            tools:text="postcode: F14 7LN" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="user"
+            type="com.emmar.emmar_assingment.database.entity.User" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitXY"
+            bind:avatar="@{user.image}"
+            android:id="@+id/ivUserImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="@{user.name}"
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/ivUserImage"
+            app:layout_constraintTop_toTopOf="@id/ivUserImage"
+            tools:text="Gino David" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="@{user.userJoinedDate}"
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:drawableEnd="@drawable/ic_forward_arrow"
+            android:textColor="@color/grey"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:drawablePadding="@dimen/_5dp"
+            android:backgroundTint="@color/light_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivUserImage"
+            tools:text="2 days ago" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="@{user.email}"
+            android:id="@+id/tvUserEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:includeFontPadding="false"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvUserName"
+            app:layout_constraintTop_toBottomOf="@id/tvUserName"
+            tools:text="gino@gmail.com" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="@{user.userCountry}"
+            android:id="@+id/tvUserCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/ivUserImage"
+            app:layout_constraintStart_toStartOf="@id/tvUserName"
+            app:layout_constraintTop_toBottomOf="@id/tvUserEmail"
+            tools:text="Country | United Kingdom" />
+
+        <View
+            android:id="@+id/bottomLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/light_grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivUserImage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
