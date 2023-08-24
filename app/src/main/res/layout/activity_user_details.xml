@@ -17,7 +17,7 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvUserTitle"
+            android:id="@+id/tv_title"
             android:layout_width="@dimen/_0dp"
             android:layout_height="@dimen/_50dp"
             android:background="@color/light_grey"
@@ -39,9 +39,9 @@
             android:onClick="onBackBtn"
             android:padding="@dimen/_10dp"
             android:src="@drawable/ic_back_btn"
-            app:layout_constraintBottom_toBottomOf="@id/tvUserTitle"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tvUserTitle" />
+            app:layout_constraintTop_toTopOf="@id/tv_title" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineStart"
@@ -58,7 +58,7 @@
             app:layout_constraintGuide_end="@dimen/_30dp" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivUserImage"
+            android:id="@+id/iv_user_img"
             android:layout_width="@dimen/_200dp"
             android:layout_height="@dimen/_200dp"
             android:layout_marginTop="30dp"
@@ -68,7 +68,7 @@
             android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/tvUserTitle"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
             bind:avatar="@{user.image}" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -78,17 +78,18 @@
             android:gravity="center"
             android:text="@{user.age}"
             android:textSize="12sp"
+            android:id="@+id/iv_age"
             android:layout_marginEnd="@dimen/_10dp"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_marginBottom="@dimen/_20dp"
-            app:layout_constraintEnd_toEndOf="@id/ivUserImage"
-            app:layout_constraintStart_toEndOf="@id/ivUserImage"
-            app:layout_constraintBottom_toTopOf="@id/topLine"
+            app:layout_constraintEnd_toEndOf="@id/iv_user_img"
+            app:layout_constraintStart_toEndOf="@id/iv_user_img"
+            app:layout_constraintBottom_toTopOf="@id/v_line"
             tools:text="28" />
 
         <View
-            android:id="@+id/topLine"
+            android:id="@+id/v_line"
             android:layout_width="@dimen/_0dp"
             android:layout_height="@dimen/_2dp"
             android:layout_marginTop="@dimen/_40dp"
@@ -97,10 +98,10 @@
             android:background="@color/black"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/ivUserImage" />
+            app:layout_constraintTop_toBottomOf="@id/iv_user_img" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvEmail"
+            android:id="@+id/tv_email"
             android:layout_marginStart="@dimen/_15dp"
             android:layout_marginEnd="@dimen/_15dp"
             android:layout_width="wrap_content"
@@ -111,11 +112,11 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@+id/topLine"
+            app:layout_constraintTop_toBottomOf="@+id/v_line"
             tools:text="Email: gino@@yopmail.com" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvdate"
+            android:id="@+id/tv_date"
             android:layout_marginStart="@dimen/_15dp"
             android:layout_marginEnd="@dimen/_15dp"
             android:textColor="@color/black"
@@ -126,11 +127,11 @@
             android:textSize="@dimen/_14sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@+id/tvEmail"
+            app:layout_constraintTop_toBottomOf="@+id/tv_email"
             tools:text="Date Joined: 2 days ago" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvDOB"
+            android:id="@+id/tv_dob"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -142,11 +143,11 @@
             android:textSize="@dimen/_14sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@+id/tvdate"
+            app:layout_constraintTop_toBottomOf="@+id/tv_date"
             tools:text="DOB: 212 Dec 1981" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvLocation"
+            android:id="@+id/tv_location"
             android:layout_marginStart="@dimen/_15dp"
             android:layout_marginEnd="@dimen/_15dp"
             android:layout_width="wrap_content"
@@ -158,10 +159,10 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@+id/tvDOB" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_dob" />
 
         <View
-            android:id="@+id/midLine"
+            android:id="@+id/mid_line"
             android:layout_width="@dimen/_0dp"
             android:layout_height="@dimen/_2dp"
             android:layout_marginTop="@dimen/_5dp"
@@ -170,10 +171,10 @@
             android:layout_marginEnd="@dimen/_15dp"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/tvLocation" />
+            app:layout_constraintTop_toBottomOf="@id/tv_location" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvCity"
+            android:id="@+id/tv_city"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -185,11 +186,11 @@
             android:textSize="@dimen/_13sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@+id/midLine"
+            app:layout_constraintTop_toBottomOf="@+id/mid_line"
             tools:text="city: Salford" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvState"
+            android:id="@+id/tv_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_1dp"
@@ -201,11 +202,11 @@
             android:layout_marginStart="@dimen/_15dp"
             android:layout_marginEnd="@dimen/_15dp"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@+id/tvCity"
+            app:layout_constraintTop_toBottomOf="@+id/tv_city"
             tools:text="state: File" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvCountry"
+            android:id="@+id/tv_country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_1dp"
@@ -217,11 +218,11 @@
             android:textSize="@dimen/_13sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@+id/tvState"
+            app:layout_constraintTop_toBottomOf="@+id/tv_state"
             tools:text="country: United" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvPostCode"
+            android:id="@+id/tv_post_code"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_1dp"
@@ -233,7 +234,7 @@
             android:textSize="@dimen/_13sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@+id/tvCountry"
+            app:layout_constraintTop_toBottomOf="@+id/tv_country"
             tools:text="postcode: F14 7LN" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -11,7 +11,7 @@
 
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvUserTitle"
+            android:id="@+id/tv_title"
             android:layout_width="@dimen/_0dp"
             android:layout_height="@dimen/_50dp"
             android:background="@color/light_grey"
@@ -34,12 +34,12 @@
             android:onClick="onBackPress"
             android:padding="@dimen/_10dp"
             android:src="@drawable/ic_back_btn"
-            app:layout_constraintBottom_toBottomOf="@id/tvUserTitle"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tvUserTitle" />
+            app:layout_constraintTop_toTopOf="@id/tv_title" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvUser"
+            android:id="@+id/rv_user"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/_8sdp"
@@ -52,14 +52,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvUserTitle" />
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
         <ProgressBar
             android:visibility="gone"
             android:id="@+id/idPBLoading"
             android:layout_width="@dimen/_20dp"
             android:layout_height="@dimen/_20dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rvUser"
+            app:layout_constraintTop_toBottomOf="@+id/rv_user"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginBottom="@dimen/_10dp"
             app:layout_constraintEnd_toEndOf="parent"/>

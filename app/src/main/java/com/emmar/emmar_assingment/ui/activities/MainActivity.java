@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
-        hitApt();
+        hitUserListApi();
         Observers();
     }
 
@@ -55,7 +55,7 @@ public class MainActivity extends BaseActivity {
             protected void loadMoreItems() {
                 isLoading = true;
                 pageIndex++;
-                hitApt();
+                hitUserListApi();
             }
 
             @Override
@@ -73,7 +73,7 @@ public class MainActivity extends BaseActivity {
     /**
      * This method is used ti fetch user list data from the api
      **/
-    private void hitApt() {
+    private void hitUserListApi() {
         if (AppUtils.isNetworkAvailable(MainActivity.this)) {
             activityMainBinding.idPBLoading.setVisibility(View.VISIBLE);
             if (pageIndex == 1) {

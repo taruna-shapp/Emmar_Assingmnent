@@ -22,7 +22,7 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:scaleType="fitXY"
             bind:avatar="@{user.image}"
-            android:id="@+id/ivUserImage"
+            android:id="@+id/iv_user_img"
             android:layout_width="50dp"
             android:layout_height="50dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,8 +37,8 @@
             android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@id/ivUserImage"
-            app:layout_constraintTop_toTopOf="@id/ivUserImage"
+            app:layout_constraintStart_toEndOf="@id/iv_user_img"
+            app:layout_constraintTop_toTopOf="@id/iv_user_img"
             tools:text="Gino David" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -54,7 +54,7 @@
             android:drawablePadding="@dimen/_5dp"
             android:backgroundTint="@color/light_grey"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/ivUserImage"
+            app:layout_constraintTop_toTopOf="@id/iv_user_img"
             tools:text="2 days ago" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -79,7 +79,7 @@
             android:textSize="12sp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@id/ivUserImage"
+            app:layout_constraintBottom_toBottomOf="@id/iv_user_img"
             app:layout_constraintStart_toStartOf="@id/tvUserName"
             app:layout_constraintTop_toBottomOf="@id/tvUserEmail"
             tools:text="Country | United Kingdom" />
@@ -91,6 +91,6 @@
             android:layout_marginTop="10dp"
             android:background="@color/light_grey"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivUserImage" />
+            app:layout_constraintTop_toBottomOf="@id/iv_user_img" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
